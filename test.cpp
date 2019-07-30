@@ -52,13 +52,14 @@ int main(int argc, char* argv[])
         if(cv::waitKey(10) == 27) {
             std::cout << "esc ' ed" << std::endl;
             break;
-            } 
+             
 
             for(;;) {
             cap >> frame;
             ++count;
             std::string name = "out_" + std::to_string(count) + ".png";
             cv::imwrite("/home/rayyan/out_dir/" + name, frame);
+                }
             }
           
         }
