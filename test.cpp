@@ -9,8 +9,6 @@
 #include "string"
 #include "test.h"
 
-//hello world this is from ubuntu 16.04.4
-
 int main(int argc, char* argv[])
 {
     help();
@@ -45,14 +43,11 @@ int main(int argc, char* argv[])
             break;
         }
         cv::imshow(window_name, frame);
-
-        
         
         //exit key is ESC
         if(cv::waitKey(10) == 27) {
             std::cout << "esc ' ed" << std::endl;
             break;
-             
 
             for(;;) {
             cap >> frame;
