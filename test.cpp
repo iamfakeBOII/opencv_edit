@@ -32,7 +32,7 @@ int main(int argc, char* argv[])
 
     std::string window_name = "INPUT_FILE";
 
-    cv::namedWindow(window_name, cv::WINDOW_AUTOSIZE);
+    cv::namedWindow(window_name, cv::WINDOW_NORMAL);
     while(true) {
         cv::Mat frame;
         int count = -1;
@@ -43,19 +43,22 @@ int main(int argc, char* argv[])
             break;
         }
         cv::imshow(window_name, frame);
-        for(;;) {
-            cap >> frame;
-            ++count;
-            std::string name = "out_" + std::to_string(count) + ".png";
-            cv::imwrite("/home/rayyan/out_dir/" + name, frame);
-        
 
+        
+        
         //exit key is ESC
         if(cv::waitKey(10) == 27) {
             std::cout << "esc ' ed" << std::endl;
             break;
             } 
-         } 
+
+            for(;;) {
+            cap >> frame;
+            ++count;
+            std::string name = "out_" + std::to_string(count) + ".png";
+            cv::imwrite("/home/rayyan/out_dir/" + name, frame);
+            }
+          
         }
     }
 
